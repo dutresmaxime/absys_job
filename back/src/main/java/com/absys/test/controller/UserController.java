@@ -4,7 +4,6 @@ import com.absys.test.model.User;
 import com.absys.test.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.List;
 
 @RestController()
@@ -19,7 +18,7 @@ public class UserController {
 
 	@PostMapping("/register")
 	public User register(@RequestBody User user) {
-		return userService.createUser(null);
+		return userService.createUser(user);
 	}
 
 	@GetMapping("/")

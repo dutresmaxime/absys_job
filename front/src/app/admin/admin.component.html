@@ -1,24 +1,44 @@
 <!-- Fix me : group by job then country -->
-
+<p-button label="Sort by job then country" (click)="findByJobThenCountry()" style="margin-right:10px"></p-button>
+<p-button label="Unsort" (click)="loadUsers()"></p-button>
 <p-table *ngIf="users" [value]="users">
   <ng-template pTemplate="header">
     <tr>
       <th>ID</th>
       <th>Firstname</th>
       <th>Lastname</th>
-      <th>Age</th>
+      <th>Earth job</th>
+      <th>Earth country</th>
+      <th>Birthday</th>
       <th>State</th>
       <th>Action</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-user>
     <tr>
-      <td>{{user.id}}</td>
-      <td>{{user.firstname}}</td>
-      <td>{{user.lastname}}</td>
-      <td>{{user.birthday}}</td>
-      <td>{{user.state}}</td>
-      <td><p-button label="Approuved" (click)="onApprouved(user.id)"></p-button></td>
+      <td> {{user.id}}
+      </td>
+      <td>
+        {{user.firstname}}
+      </td>
+      <td>
+        {{user.lastname}}
+      </td>
+      <td>
+        {{user.earthJob}}
+      </td>
+      <td>
+        {{user.earthCountry}}
+      </td>
+      <td>
+        {{user.birthday.substring(0, 10)}} <!-- Quick fix for lisibility -->
+      </td>
+      <td>
+        {{user.state}}
+      </td>
+      <td>
+        <p-button label="Approuved" (click)="onApprouved(user.id)"></p-button>
+      </td>
     </tr>
   </ng-template>
 </p-table>

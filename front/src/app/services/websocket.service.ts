@@ -14,7 +14,7 @@ export class WebsocketService {
     if (this.client) {
       return this.client;
     }
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       const client = new Client({
         brokerURL: environment.websocketUrl,
         onConnect: (frame) => {

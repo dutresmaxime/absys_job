@@ -3,16 +3,25 @@
   <form (ngSubmit)="onSubmit()">
     <p-fieldset legend="Personnal informations">
       <div class="p-field">
-        <label for="firstname">First name</label><br/>
-        <input id="firstname" pInputText [(ngModel)]="user.firstname" required="" name="firstname" type="text" pInputText>
+        <label for="firstname">First name</label><br />
+        <input id="firstname" pInputText [(ngModel)]="user.firstname" required="" name="firstname" type="text"
+          pInputText>
       </div>
       <div class="p-field">
-        <label for="lastname">Lastname</label><br/>
+        <label for="lastname">Lastname</label><br />
         <input id="lastname" pInputText [(ngModel)]="user.lastname" required="" name="lastname" type="text" pInputText>
       </div>
       <div class="p-field">
-        <label for="birthday">Birthday</label><br/>
+        <label for="birthday">Birthday</label><br />
         <p-calendar id="birthday" [(ngModel)]="user.birthday" required="" name="birthday"></p-calendar>
+      </div>
+      <div class="p-field">
+        <label for="earthJob">Earth Job</label><br />
+        <input id="earthJob" pInputText [(ngModel)]="user.earthJob" required="" name="earthJob" type="text" pInputText>
+      </div>
+      <div class="p-field">
+        <label for="earthCountry">Earth Country</label><br />
+        <input id="earthCountry" pInputText [(ngModel)]="user.earthCountry" required="" name="earthCountry" type="text" pInputText>
       </div>
       <div class="p-field">
         <button pButton type="submit" label="Register"></button>

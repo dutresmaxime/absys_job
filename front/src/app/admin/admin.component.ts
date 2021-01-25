@@ -28,12 +28,15 @@ export class AdminComponent implements OnInit {
     this.users = await this.userService.findAll();
   }
 
+  async findByJobThenCountry() {
+    this.users = await this.userService.findByJobThenCountry();
+  }
   /**
    * Auto reload the list when a new user is registered
    * FIXME : Not working
    */
   async loadWebSocket() {
-    const r = this.webSocket.connect();
+    await this.webSocket.connect();
     // update user on state change
     this.webSocket.subscribe('/workflow/states', (user) => {
       this.loadUsers();
