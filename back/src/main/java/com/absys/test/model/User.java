@@ -9,7 +9,7 @@ public class User {
     private Date birthday;
     private String earthCountry;
     private String earthJob;
-    private UserState state = UserState.CREATED;
+    private UserState state = UserState.DONE;
 
     public User(String id, String firstname, String lastname, Date birthday, String earthCountry, String earthJob) {
         this.id = id;
